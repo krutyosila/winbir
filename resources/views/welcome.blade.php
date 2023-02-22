@@ -17,7 +17,7 @@
             background-size: cover;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('app.css') }}">
+    <link rel="stylesheet" href="{{ asset('app.css') }}?v=1233">
 </head>
 <body>
 <div class="content bg">
@@ -30,15 +30,17 @@
                 <div id="rating" data-rating="{{ $data['yours'] }}"></div>
             </div>
             <div class="py-4 text-white-50">
-                <p>
-                    <b class="text-white" id="total">{{ number_format($data['total']) }}</b> kullanıcı oyu
-                </p>
-                <p>
-                    <b class="text-white" id="avg">%{{ $data['avg'] }}</b> müşteri memnuniyeti.
-                </p>
+                <div class="info align-items-center justify-content-center">
+                    <p class="circle left d-flex align-items-center justify-content-center">
+                        <span><b id="avg">%{{ $data['avg'] }}</b>memnuniyet</span>
+                    </p>
+                    <p class="circle right d-flex align-items-center justify-content-center">
+                        <span><b id="total">{{ $data['total'] }}</b> oy</span>
+                    </p>
+                </div>
             </div>
             <div class="pt-3">
-                <a href="" class="btn btn-lg btn-danger border border-danger">WINBIR GİRİŞ</a>
+                <a href="https://t2m.io/winbir" target="_blank" class="btn btn-lg btn-danger border border-danger">WINBIR GİRİŞ</a>
             </div>
         </div>
     </div>
@@ -46,7 +48,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('rating.star.js') }}"></script>
+<script src="{{ asset('rating.star.js') }}?v=12333"></script>
 <script>
     $(document).ready(function () {
         let update = function (response) {
